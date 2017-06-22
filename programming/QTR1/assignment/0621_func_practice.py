@@ -212,7 +212,7 @@ def f23(li):
         for i in new_li:
             if i > mx:
                 mx = i
-        print(mx)
+        return mx
 
 
 def f24(li):
