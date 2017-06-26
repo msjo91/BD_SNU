@@ -1,8 +1,5 @@
 # Computes the average of numbers listed in a file.
 # Works with multiple numbers on a line.
-import string
-
-
 def main():
     fileName = input("What file are the numbers in? ")
     infile = open(fileName, 'r')

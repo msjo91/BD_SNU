@@ -4,7 +4,7 @@
 import math
 
 
-def eucDist(n, p1, p2):
+def euc_dist(n, p1, p2):
     """
     :param n: dimension
     :param p1: list with a length of n
