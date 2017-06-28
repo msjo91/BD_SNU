@@ -1,8 +1,5 @@
 drop table if exists sales cascade;
-drop table if exists timer cascade;
-drop table if exists item cascade;
 drop table if exists store cascade;
-drop table if exists employee cascade;
 
 create table store
 (
@@ -24,10 +21,7 @@ create table sales
     items_sold int,
     amount_sold int,
     tax_amount int,
-    constraint fk_sales_time foreign key (timeKey) references timer(timeKey),
-    constraint fk_sales_item foreign key (itemNum) references item(itemNum),
-    constraint fk_sales_store foreign key (storeNum) references store(storeNum),
-    constraint fk_sales_emp foreign key (employeeNum) references employee(employeeNum),
+    constraint fk_sales foreign key (storeNum) references store(storeNum),
     constraint pk_sales primary key (timeKey, itemNum, storeNum, employeeNum)
 );
 
