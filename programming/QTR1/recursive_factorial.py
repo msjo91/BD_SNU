@@ -17,17 +17,20 @@ RecursionError: maximum recursion depth exceeded in comparison
 # 0! = 1 (base case)
 # n! = n * (n - 1)! (recursive case)
 # n =< 1986 (recursion error)
-def recursive_factorial(n):
-    if n == 0:
-        return 1
+def factorial_recur(n, depth=0):
+    print(" " * depth, "factorial({})".format(n))
+    if n < 2:
+        result = 1
     else:
-        return n * recursive_factorial(n - 1)
+        result = n * factorial_recur(n - 1, depth + 1)
+    print(" " * depth, "-> {}".format(result))
+    return result
 
 
 # Below version has no limit since it does not require stacks.
 # No recursion error.
-def iterative_factorial(n):
+def factorial_iter(n):
     res = 1
-    for i in range(1, n + 1):
+    for i in range(2, n + 1):
         res *= i
     return res
