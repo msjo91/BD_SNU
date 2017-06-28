@@ -26,10 +26,12 @@ def f3(li):
 def f4(li):
     """Return the sum of all index positions whose corresponding element is odd in a given list."""
     idx = 0
+    ans = 0
     for i in li:
         if i % 2 == 1:
-            idx += li.index(i)
-    return idx
+            ans += idx
+        idx += 1
+    return ans
 
 
 def f5(li):
@@ -51,11 +53,11 @@ def f6(li):
 
 def f7(li):
     """Return the average of all the numbers in a given list."""
-    sm = 0
+    ans = 0
     num = len(li)
     for i in li:
-        sm += i
-    return sm / num
+        ans += i
+    return ans / num
 
 
 def f8(a, b, n):
