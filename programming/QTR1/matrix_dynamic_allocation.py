@@ -12,6 +12,15 @@ def change_element(table, row, col, num):
     return table
 
 
+def change_all_elements(table, num):
+    rows = len(table)
+    cols = len(table[0])
+    for row in range(rows):
+        for col in range(cols):
+            table[row][col] += num
+    return table
+
+
 # 2D arrays do not really exist in Python.
 # They are lists that happen to contain other lists as elements.
 # This can be done for "3D lists", or even "4D" or higher-dimensional lists.
