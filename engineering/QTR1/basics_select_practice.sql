@@ -1,4 +1,4 @@
-/* Followed after basics.sql */
+/* Followed after basics_schema1.sql */
 
 /* select, distinct(no repetition), order by */
 select address from student;

@@ -34,7 +34,7 @@ alter table sales drop column tax_amount;
 drop table sales;
 drop table store;
 
-/* Followed after basics.sql */
+/* Followed after basics_schema1.sql */
 
 /* 3-4. Insert records into professor */
 insert into professor values ('92003', '851221-2812312', '유강민', '920', '조교수', 2017);
