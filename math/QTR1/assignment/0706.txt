@@ -1,0 +1,101 @@
+Q1.
+    a) r ⋀ ¬q
+    b) p ⋀ q ⋀ r
+    c) r ⟶ p
+    d) p ⋀ ¬q ⋀ r
+    e) p ⋀ q ⟶ r
+    f) r ⟷ q ⋁ p
+
+Q2.
+ U = things
+    a) ∀x(P(x) ⟶ ¬S(x))
+    b) ∀x(R(x) ⟶ S(x))
+    c) ∀x(Q(x) ⟶ P(x))
+    d) ∀x(Q(x) ⟶ ¬R(x))
+
+Q3.
+ Proof by contradiction
+ Say that n and 𝜀 are not unique in x = n - 𝜀.
+ Suppose there are two sets of n and 𝜀 that satisfy x = n - 𝜀.
+ The first set is n1 and 𝜀1, and the second set is n2 and 𝜀2.
+ Assume n1 ≠ n2 and 𝜀1 ≠ 𝜀2
+ Then, n1 - 𝜀1 = x = n2 - 𝜀2.
+ Thus, n1 - 𝜀1 = n2 - 𝜀2
+ If so, n1 - n2 = 𝜀1 - 𝜀2.
+ However, this is false because |n1 - n2| ≥ 1 and |𝜀1 - 𝜀2| < 1, since n is an integer and 0 ≤ 𝜀 < 1.
+ By proof by contradiction, it is true that there exist unique numbers n and 𝜀 that x = n - 𝜀 where n is an integer, and 0 ≤ 𝜀 < 1, given a real number x.
+
+Q4.
+ U ⊃ A, B
+    a) {2, 5}
+    b)
+       A ⨁ B
+       {x|x ∈ A ⋃ B ⋀ x ∉ A ⋂ B}        by defn. of symmetric difference
+       {x|x ∈ A ⋃ B ⋀ x ∈ (A ⋂ B)^c}    by defn. of negation
+       (A ⋃ B) ⋂ (A ⋂ B)^c              by defn. of intersection
+       (A ⋃ B) - (A ⋂ B)                by defn. of difference
+    c)
+       A ⨁ B
+       {x|x ∈ A ⋃ B ⋀ x ∉ A ⋂ B}        by defn. of symmetric difference
+       {x|x ∈ A ⋃ B ⋀ x ∈ (A ⋂ B)^c}    by defn. of negation
+       (A ⋃ B) ⋂ (A ⋂ B)^c              by defn. of intersection
+       (A ⋃ B) ⋂ (A^c ⋃ B^c)            by De Morgan’s laws
+       ((A ⋃ B) ⋂ A^c) ⋃ ((A ⋃ B) ⋂ B^c)    by distributive laws
+       ((A ⋂ A^c) ⋃ (B ⋂ A^c)) ⋃ ((A ⋂ B^c) ⋃ (B ⋂ B^c))    by distributive laws
+       (ø ⋃ (A^c ⋂ B)) ⋃ ((B^c ⋂ A) ⋃ ø)    by complement laws
+       (A^c ⋂ B) ⋃ (B^c ⋂ A)            by identity laws
+       (B ⋂ A^c) ⋃ (A ⋂ B^c)            by commutative laws
+       (B - A) ⋃ (A - B)                by defn. of difference
+       (A - B) ⋃ (B - A)                by commutative laws
+    d)
+       (A ⨁ B) ⨁ B
+       (((A ⋃ B) ⋂ (A ⋂ B)^c) ⋃ B) - (((A ⋃ B) ⋂ (A ⋂ B)^c) ⋂ B)    by logics Q4b and Q4c
+
+       Left Term
+        ((A ⋃ B) ⋂ (A ⋂ B)^c) ⋃ B
+        ((A ⋃ B) ⋂ (A^c ⋃ B^c)) ⋃ B          by De Morgan’s laws
+        ((A ⋃ B) ⋃ B) ⋂ ((A^c ⋃ B^c) ⋃ B)    by distributive laws
+        (A ⋃ (B ⋃ B)) ⋂ (A^c ⋃ (B^c ⋃ B))    by associative laws
+        (A ⋃ B) ⋂ (A^c ⋃ U)    by idempotent and complement laws
+        (A ⋃ B) ⋂ U                          by domination laws
+        A ⋃ B                                by identity laws
+
+       Right Term
+        ((A ⋃ B) ⋂ (A ⋂ B)^c) ⋂ B
+        (A ⋃ B) ⋂ ((A^c ⋃ B^c) ⋂ B)    by De Morgan’s and associative laws
+        (A ⋃ B) ⋂ ((A^c ⋂ B) ⋃ (B^c ⋂ B))    by distributive laws
+        (A ⋃ B) ⋂ ((A^c ⋂ B) ⋃ ø)            by complement laws
+        (A ⋃ B) ⋂ (A^c ⋂ B)                  by identity laws
+        ((A ⋃ B) ⋂ A^c) ⋂ B                  by associative laws
+        ((A ⋂ A^c) ⋃ (B ⋂ A^c)) ⋂ B          by distributive laws
+        (ø ⋃ (B ⋂  A^c)) ⋂ B                 by complement laws
+        (B ⋂ A^c) ⋂ B                        by identity laws
+        A^c ⋂ (B ⋂ B)         by commutative and associative laws
+        A^c ⋂  B
+
+       (A ⨁ B) ⨁ B
+       (((A ⋃ B) ⋂ (A ⋂ B)^c) ⋃ B) - (((A ⋃ B) ⋂ (A ⋂ B)^c) ⋂ B)    by logics in Q4b and Q4c
+       (A ⋃ B) - (A^c ⋂ B)                by logics in L-R Terms
+       (A ⋃ B) ⋂ (A^c ⋂ B)^c              by defn. of difference
+       (A ⋃ B) ⋂ (A ⋃ B^c)                by De Morgan’s laws
+       ((A ⋃ B) ⋂ A) ⋃ ((A ⋃ B) ⋂ B^c)    by distributive laws
+       A ⋃ ((A ⋂ B^c) ⋃ (B ⋂ B^c))        by distributive laws
+       A ⋃ ((A ⋂ B^c) ⋃ ø)                by complement laws
+       A ⋃ (A ⋂ B^c)                      by identity laws
+       A ⋃ (A - B)                        by defn. of difference
+       A
+
+Q5.
+ 2^n/2 if n is even.
+ 2^(n+1)/2 if n is odd.
+ Or simply, 2^⌈n/2⌉
+
+Q6.
+ Proof by contradiction
+ Say that the i-th box can contain up to ni - 1 objects.
+ Then, there would be (n1 - 1) + (n2 - 1) + ··· + (nt - 1) objects for all t boxes.
+ That is, n1 + n2 + ··· + nt - t objects.
+ However, the given number of objects is n1 + n2 + ··· + nt - t + 1.
+ By the pigeonhole principle, there needs to be a box that would accept one more object to place all objects in the boxes.
+ At least one i-th box must have (ni - 1) + 1 objects; thus, ni objects.
+ By proof by contradiction, it is true that there is one or more boxes that keep at least ni objects when there are t boxes and n1 + n2 + ··· + nt - t + 1 objects to place in.
