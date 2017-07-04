@@ -1,10 +1,25 @@
-# Created by https://www.gitignore.io/api/git,macos,python,pycharm,virtualenv
+# Created by https://www.gitignore.io/api/git,linux,macos,python,pycharm,virtualenv
 
 ### Project Custom ###
 big_data_snu_env
 
 ### Git ###
 *.orig
+
+### Linux ###
+*~
+
+# temporary files which can be created if a process still has a handle open of a deleted file
+.fuse_hidden*
+
+# KDE directory preferences
+.directory
+
+# Linux trash folder which might appear on any partition or disk
+.Trash-*
+
+# .nfs files are created when an open file is removed but is still being accessed
+.nfs*
 
 ### macOS ###
 *.DS_Store
@@ -208,4 +223,4 @@ ENV/
 pyvenv.cfg
 pip-selfcheck.json
 
-# End of https://www.gitignore.io/api/git,macos,python,pycharm,virtualenv
+# End of https://www.gitignore.io/api/git,linux,macos,python,pycharm,virtualenv
