@@ -14,7 +14,29 @@ Q2.
     d) ∀x(Q(x) ⟶ ¬R(x))
 
 Q3.
- Proof by contradiction
+ Proof of existence using mathematical induction
+ When case A1 is True and assuming case An is True, if case An+1 is True, An must be True for all n.
+ Case A1 >>
+  x ∈ (0, 1]
+  x = n - 𝜀
+  x = 1 - 𝜀
+  𝜀 = 1 - x
+  It is True that there exist n and 𝜀 that satisfy x = 1 - 𝜀 when x is a real number greater than 0 and equal to or less than 1.
+ Case An >>
+  x ∈ (n - 1, n]
+  Assume x = n - 𝜀
+  Assume it True that there exist n and 𝜀 that satisfy x = n - 𝜀 when x is a real number greater than n - 1 and equal to or less than n.
+ Case An+1 >>
+  x ∈ (n, n + 1]
+  x - 1 ∈ (n - 1, n]
+  x - 1 = y = n - 𝜀
+  x - 1 = n - 𝜀
+  x = (n + 1) - 𝜀
+  It is True that there exist n and 𝜀 that satisfy x = n + 1 - 𝜀 when x is a real number greater than n and equal or less than n + 1.
+ Thus, Case-An is also True.
+ Then there exist n and 𝜀 that satisfy x = n - 𝜀 for all real number x.
+
+ Uniqueness proof by contradiction
  Say that n and 𝜀 are not unique in x = n - 𝜀.
  Suppose there are two sets of n and 𝜀 that satisfy x = n - 𝜀.
  The first set is n1 and 𝜀1, and the second set is n2 and 𝜀2.
@@ -71,7 +93,7 @@ Q4.
         (ø ⋃ (B ⋂  A^c)) ⋂ B                 by complement laws
         (B ⋂ A^c) ⋂ B                        by identity laws
         A^c ⋂ (B ⋂ B)         by commutative and associative laws
-        A^c ⋂  B
+        A^c ⋂  B                             by idempotent laws
 
        (A ⨁ B) ⨁ B
        (((A ⋃ B) ⋂ (A ⋂ B)^c) ⋃ B) - (((A ⋃ B) ⋂ (A ⋂ B)^c) ⋂ B)    by logics in Q4b and Q4c
@@ -79,11 +101,10 @@ Q4.
        (A ⋃ B) ⋂ (A^c ⋂ B)^c              by defn. of difference
        (A ⋃ B) ⋂ (A ⋃ B^c)                by De Morgan’s laws
        ((A ⋃ B) ⋂ A) ⋃ ((A ⋃ B) ⋂ B^c)    by distributive laws
-       A ⋃ ((A ⋂ B^c) ⋃ (B ⋂ B^c))        by distributive laws
+       A ⋃ ((A ⋂ B^c) ⋃ (B ⋂ B^c))        by absorption laws and distributive laws
        A ⋃ ((A ⋂ B^c) ⋃ ø)                by complement laws
        A ⋃ (A ⋂ B^c)                      by identity laws
-       A ⋃ (A - B)                        by defn. of difference
-       A
+       A                                  by absorption laws
 
 Q5.
  2^n/2 if n is even.
