@@ -1,7 +1,7 @@
 # Big Data SNU
 Records of Big Data Platform Technology course in SNU 4th Industrial Revolution Academy
 ### Languages
-Engineering: SQL
+Engineering: SQL  
 Programming: Python 3.6.1
 ### Packages
 Listed in requirements.txt
