@@ -1,7 +1,8 @@
-# Created by https://www.gitignore.io/api/git,linux,macos,python,pycharm,virtualenv
+# Created by https://www.gitignore.io/api/git,text,linux,macos,python,pycharm,virtualenv
 
 ### Project Custom ###
 big_data_snu_env
+.idea/
 
 ### Git ###
 *.orig
@@ -53,7 +54,6 @@ Temporary Items
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 # User-specific stuff:
-.idea/
 .idea/**/workspace.xml
 .idea/**/tasks.xml
 .idea/dictionaries
@@ -211,6 +211,16 @@ ENV/
 # mkdocs documentation
 /site
 
+### Text ###
+*.doc
+*.docx
+*.msg
+*.pages
+*.rtf
+*.txt
+*.wpd
+*.wps
+
 ### VirtualEnv ###
 # Virtualenv
 # http://iamzed.com/2009/05/07/a-primer-on-virtualenv/
@@ -219,8 +229,10 @@ ENV/
 [Ll]ib
 [Ll]ib64
 [Ll]ocal
+[Mm]an
 [Ss]cripts
+[Tt]cl
 pyvenv.cfg
 pip-selfcheck.json
 
-# End of https://www.gitignore.io/api/git,linux,macos,python,pycharm,virtualenv
+# End of https://www.gitignore.io/api/git,text,linux,macos,python,pycharm,virtualenv
