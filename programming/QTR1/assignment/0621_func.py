@@ -1,10 +1,10 @@
 def f1(li):
     """Return the number of odd elements in a given list."""
-    num = 0
+    count = 0
     for i in li:
         if i % 2 == 1:
-            num += 1
-    return num
+            count += 1
+    return count
 
 
 def f2(li):
@@ -16,30 +16,28 @@ def f2(li):
 
 def f3(li):
     """Return the sum of all odd elements in a given list."""
-    num = 0
+    res = 0
     for i in li:
         if i % 2 == 1:
-            num += i
-    return num
+            res += i
+    return res
 
 
 def f4(li):
     """Return the sum of all index positions whose corresponding element is odd in a given list."""
-    idx = 0
-    ans = 0
-    for i in li:
-        if i % 2 == 1:
-            ans += idx
-        idx += 1
-    return ans
+    res = 0
+    for idx in range(len(li)):
+        if li[idx] % 2 == 1:
+            res += idx
+    return res
 
 
 def f5(li):
     """Return the same list where each element has been squared."""
-    sq_li = []
+    new_li = []
     for i in li:
-        sq_li.append(i ** 2)
-    return sq_li
+        new_li.append(i ** 2)
+    return new_li
 
 
 def f6(li):
@@ -53,11 +51,11 @@ def f6(li):
 
 def f7(li):
     """Return the average of all the numbers in a given list."""
-    ans = 0
+    total = 0
     num = len(li)
     for i in li:
-        ans += i
-    return ans / num
+        total += i
+    return total / num
 
 
 def f8(a, b, n):
@@ -70,8 +68,7 @@ def f8(a, b, n):
 def f9(width, height):
     """Print an ASCII rectangle with the given width and height."""
     if width == 0:
-        for i in range(0):
-            print('*' * width)
+        pass
     else:
         for i in range(height):
             print('*' * width)
@@ -96,13 +93,10 @@ def f11(li):
 
 def f12(li):
     """Return True if a list consists of all negative nubers and False otherwise. Return True for an empty list."""
-    if len(li) == 0:
-        return True
-    for i in li:
-        if i < 0:
-            return True
-        else:
+    for idx in range(len(li)):
+        if li[idx] > 0:
             return False
+    return True
 
 
 def f13(li, target):
@@ -254,4 +248,4 @@ def f26(li):
             for i in sublist:
                 if i > mx:
                     mx = i
-            print(i)
+            print(mx)
