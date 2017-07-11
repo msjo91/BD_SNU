@@ -26,10 +26,14 @@ where d.dept_id = s.dept_id and s.stu_id = t.stu_id and t.class_id = cl.class_id
 select name, (2017 - year_emp) from professor where year_emp > (select year_emp from professor where name='최성희');
 
 /* Q5 */
-/* The names, class ids and grades of students (even those who never took a class */
+/* The names, class ids and grades of students (even those who never took a class in ascending order of name */
+select name, class_id, grade from student natural left outer join takes ordery by name;
 
 /* Q6 */
-/* The professor ids and names of professors paired with the student ids and names of students with the same names */
+/* The professor ids and names of professors paired with the student ids and names of students with the same names also names without pairs */
+select prof_id, p.name, stu_id, s.name from professor p left outer join student s using (name)
+union
+select prof_id, p.name, stu_id, s.name from professor p right outer join student s using (name);
 
 /* Q7 */
 /* Ascending order of department names with the number of registered students */
@@ -41,7 +45,7 @@ select name, class_id, grade from student s, takes t where s.stu_id = t.stu_id a
 
 /* Q9 */
 /* The names of students with two or more 'B' grades or higher and the number of classes they received such grades */
-select name, count(class_id) from student s, takes t where s.stu_id = t.stu_id and grade <= 'B+' group by name;
+select name, count(class_id) from student s, takes t where s.stu_id = t.stu_id and grade <= 'B+' group by name having count(class_id) >= 2;
 
 /* Q10 */
 /* The ranks and average salary of employees in ascending order of ranks */
@@ -57,9 +61,8 @@ select dept_name, sum(sal + (sal * bonus / 100)) from department d, employee e w
 
 /* Q13 */
 /* The names and average income of departments whose the average income of '사원' is greater than 3300 in ascedning order of department name */
-select dept_name, avg(sal + (sal * bonus / 100)) from department d, employee e where d.dept_id = e.dept_id and dept_name in (
-    select dept_name from department d, employee e where d.dept_id = e.dept_id and rank = '사원' group by dept_name having avg(sal + (sal * bonus / 100)) > 3300
-) group by dept_name;
+select dept_name, avg(sal + (sal * bonus / 100)) from department d, employee e where d.dept_id = e.dept_id and rank = '사원'
+group by dept_name having avg(sal + (sal * bonus / 100)) > 3300 order by dept_name;
 
 /* Q14 */
 /* The grades and frequency of each grade in ascending string order of grade (A -> A + -> B ...) */
