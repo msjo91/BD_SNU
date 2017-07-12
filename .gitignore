@@ -3,6 +3,7 @@
 ### Project Custom ###
 big_data_snu_env
 .idea/
+test.*
 
 ### Git ###
 *.orig
