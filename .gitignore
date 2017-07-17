@@ -2,8 +2,10 @@
 
 ### Project Custom ###
 big_data_snu_env
+*.csv
 .idea/
 test.*
+fileIO_directory*.txt
 
 ### Git ###
 *.orig
@@ -218,7 +220,6 @@ ENV/
 *.msg
 *.pages
 *.rtf
-*.txt
 *.wpd
 *.wps
 
