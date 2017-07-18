@@ -27,7 +27,7 @@ select name, (2017 - year_emp) from professor where year_emp > (select year_emp 
 
 /* Q5 */
 /* The names, class ids and grades of students (even those who never took a class in ascending order of name */
-select name, class_id, grade from student natural left outer join takes ordery by name;
+select name, class_id, grade from student natural left outer join takes order by name;
 
 /* Q6 */
 /* The professor ids and names of professors paired with the student ids and names of students with the same names also names without pairs */
