@@ -3,9 +3,8 @@ import os
 import pymysql.cursors
 
 # DB settings directory
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-ROOT_DIR = os.path.dirname(BASE_DIR)
-CONF_DIR = os.path.join(ROOT_DIR, ".conf")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+CONF_DIR = os.path.join(BASE_DIR, ".conf")
 CONFIG_FILE = os.path.join(CONF_DIR, "settings.json")
 config = json.loads(open(CONFIG_FILE).read())
 
