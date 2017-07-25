@@ -6,6 +6,7 @@ big_data_snu_env
 .idea/
 test.*
 fileIO_directory*.txt
+.conf/
 
 ### Git ###
 *.orig
