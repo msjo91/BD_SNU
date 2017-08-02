@@ -1,9 +1,12 @@
+# Install linprog
+install.packages('linprog')
+# Load linprog
 library(linprog)
 
 ### Q2
 # x: chocolate cream bread
 # y: baguette
-# 10x + 4y
+# Max 10x + 4y
 # 100x + 50y ≤ 3000
 # 10x ≤ 100
 
@@ -20,7 +23,7 @@ amat <- matrix(c(100, 50, 10, 0), ncol = 2, byrow = TRUE)
 solveLP(cvec, bvec, amat, maximum = TRUE)
 
 ### Q3
-# 18A + 29B + 25C
+# Max 18A + 29B + 25C
 # 0.5A + 0.2B + 0.75C ≤ 1500
 # 0.2A + 0.4B + 0.2C ≤ 600
 # A ≥ 1000
@@ -38,13 +41,15 @@ amat <- matrix(c(0.5, 0.2, 0.75, 0.2, 0.4, 0.2, -1, 0, 0, 0, -1, 0, 0, 0, -1), n
 ## Q3(b)
 # Solve it!
 solveLP(cvec, bvec, amat, maximum = TRUE)
-
+# Because the solution has decimal values (B = 384.615, C = 1230.769), it is necessary to compare each case whether (B = 385 and C = 1230) or (B = 384 and C = 1231).
+# Because 18A + 29B + 25C is greater when B = 385 and C = 1230, A = 1000, B = 385, C = 1230.
+ 
 ### Q4
 # xi: hired in the i-th month
 # yi: fired in the i-th month
 # 8000(x1 - y1 + x1 - y1 + x2 - y2 + x1 - y1 + x2 - y2 + x3 - y3) + 10000(y1 + y2 + y3) + 5000(x1 + x2 + x3)
 # 8000(3x1 + 2x2 + x3 - 3y1 - 3y2 - y3) + 10000(y1 + y2 + y3) + 5000(x1 + x2 + x3)
-# 29000x1 + 21000x2 + 13000x3 - 14000y1 - 6000y2 + 2000y3
+# Min 29000x1 + 21000x2 + 13000x3 - 14000y1 - 6000y2 + 2000y3
 # 20 + x1 - y1 ≥ 30
 # 20 + x1 - y1 + x2 - y2 ≥ 60
 # 20 + x1 - y1 + x2 - y2 + x3 - y3 ≥ 55

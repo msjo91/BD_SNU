@@ -1,6 +1,6 @@
 # Load subway.csv file to a data frame
 # Use read.table
-df <- data.frame(read.table('~/projects/big_data_snu/math/subway.csv', header = TRUE, sep = ',', stringsAsFactors = FALSE))
+df <- data.frame(read.table('~/projects/big_data_snu/math/QTR1/subway.csv', header = TRUE, sep = ',', stringsAsFactors = FALSE))
 
 # Create a new column "passengers"
 df$passengers <- df$get_in + df$get_off
@@ -16,8 +16,7 @@ t <- c(1, 3, 2, 5, 4)
 s <- sort(t, decreasing = T)
 s
 # Rename certain values
-df$station_name[which(df$station_name == '신촌' & df$line == '2호선')] <- '신촌(2호선)'
-df$station_name[which(df$station_name == '신촌')] <- '신촌(경의선)'
+df$station_name[which(df$station_name == '신촌' & df$line == '경의선')] <- '신촌(경의선)'
 df$station_name[which(df$station_name == '양평' & df$line == '5호선')] <- '양평(5호선)'
 df$station_name[which(df$station_name == '양평' & df$line == '중앙선')] <- '양평(중앙선)'
 # Create a new table of average passengers grouped by station.
