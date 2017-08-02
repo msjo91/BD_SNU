@@ -16,8 +16,8 @@ Q1. (a)
 Q2. (a)
         p: probability of heads
         P(z > (25 - 27) / 3.29): probability of more than 25 heads in 45 tosses
-        P(z = 25 - 27 / 3.29): probability of 25 heads in 45 tosses
-    	Since z = x - µ / 𝜎,
+        P(z = (25 - 27) / 3.29): probability of 25 heads in 45 tosses
+    	Since z = (x - µ) / 𝜎,
     		x = 25
     		µ = 27
     		𝜎 = 3.29
@@ -116,7 +116,30 @@ Q5. P(a ≤ X ≤ b) = (b - a) / (d - c)
                        = 1 / 3
 
 Q6.
-    (a) 
+    (a)
+        x = {-2, 0, 0, 0, 2}
+        y = {-2, -1, 0, 1, 2}
+        ∑x = 0
+        ∑y = 0
+        y = ax + b
+            ∑y = a∑x + b
+            0 = 0a + b
+            b = 0
+        y = ax
+            a = SSxy / SSxx
+              = ∑(x - ∑x)(y - ∑y) / ∑(x - ∑x)^2
+              = 8 / 8
+              = 1
+        y = x
+    (c)
+        𝜀^2: squared error
+        𝜀^2 = ∑(y - (ax + b))^2
+        𝜀^2 = ∑(y - x)^2
+        (-2, -2): 𝜀^2 = 0
+        (0, -1): 𝜀^2 = 1
+        (0, 0): 𝜀^2 = 0
+        (0, 1): 𝜀^2 = 1
+        (2, 2): 𝜀^2 = 0
 
 Q7. Codes (a) ~ (d) are in file 'subway.R'
     (d)
