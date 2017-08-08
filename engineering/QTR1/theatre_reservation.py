@@ -101,16 +101,23 @@ def act4():
     """
     name = input("Building name: ")
     location = input("Building location: ")
-    capacity = int(input("Building capacity: "))
+    capacity = int(input("Performance capacity: "))
     seat = int(input("Seat capacity: "))
     with connection.cursor() as c:
-        sql = "insert into building (name, location, capacity, seat) values ('%s', '%s', %d, %d)" % (
-            name,
-            location,
-            capacity,
-            seat
-        )
+        sql = "select name, location from building where name='%s' and location='%s'" % (name, location)
         c.execute(sql)
+        res = c.fetchall()
+        if res is ():
+            sql = "insert into building (name, location, capacity, seat) values ('%s', '%s', %d, %d)" % (
+                name,
+                location,
+                capacity,
+                seat
+            )
+            c.execute(sql)
+            print("A building is successfully inserted.")
+        else:
+            print("The building is already registered.")
 
 
 def act5():
@@ -124,8 +131,10 @@ def act5():
         res = c.fetchall()
         if res is ():
             print("The building ID is not registered. Please check again.")
-        sql = "delete from building where id=%s" % building
-        c.execute(sql)
+        else:
+            sql = "delete from building where id=%s" % building
+            c.execute(sql)
+            print("Building %s is removed." % building)
 
 
 def act6():
@@ -134,14 +143,21 @@ def act6():
     """
     name = input("Performance name: ")
     genre = input("Performance type: ")
-    price = int(input("Performance capacity: "))
+    price = eval(input("Performance price: "))
     with connection.cursor() as c:
-        sql = "insert into performance (name, type, price) values ('%s', '%s', %d)" % (
-            name,
-            genre,
-            price
-        )
+        sql = "select * from performance where name='%s' and type='%s' and price=%d" % (name, genre, price)
         c.execute(sql)
+        res = c.fetchall()
+        if res is ():
+            sql = "insert into performance (name, type, price) values ('%s', '%s', %d)" % (
+                name,
+                genre,
+                price
+            )
+            c.execute(sql)
+            print("A performance is successfully inserted.")
+        else:
+            print("The performance is already registered.")
 
 
 def act7():
@@ -155,8 +171,16 @@ def act7():
         res = c.fetchall()
         if res is ():
             print("The performance ID is not registered. Please check again.")
-        sql = "delete from performance where id=%s" % performance
-        c.execute(sql)
+        else:
+            sql = "select building_id from assign where performance_id=%s" % performance
+            c.execute(sql)
+            res = c.fetchall()
+            if res is not ():
+                sql = "update building set assigned=assigned-1 where id=%s" % res[0]['building_id']
+                c.execute(sql)
+            sql = "delete from performance where id=%s" % performance
+            c.execute(sql)
+            print("Performance %s is removed." % performance)
 
 
 def act8():
@@ -182,8 +206,16 @@ def act9():
         res = c.fetchall()
         if res is ():
             print("The audience ID is not registered. Please check again.")
-        sql = "delete from audience where aud_id=%s" % audience
-        c.execute(sql)
+        else:
+            sql = "select performance_id from seat where audience_id=%s" % audience
+            c.execute(sql)
+            res = c.fetchall()
+            for idx, val in enumerate(res):
+                sql = "update performance set booked=booked-1 where id=%s" % res[idx]['performance_id']
+                c.execute(sql)
+            sql = "delete from audience where aud_id=%s" % audience
+            c.execute(sql)
+            print("Audience %s is removed." % audience)
 
 
 def act10():
@@ -387,8 +419,11 @@ print("""
 """)
 
 while 1:
-    action = int(input("Select your action: "))
+    action = eval(input("Select your action: "))
     if action == 15:
         disconnect()
         break
-    exec('act%d()' % action)
+    elif action in range(1, 15):
+        exec('act%d()' % action)
+    else:
+        print("Choose from 1 to 15.")
