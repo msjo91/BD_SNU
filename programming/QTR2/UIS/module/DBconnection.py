@@ -50,7 +50,7 @@ def close_db(db):
 
 def test_connection():
     """Test if connection is successful."""
-    with connect_db().cursor() as c:
+    with get_connect().cursor() as c:
         c.execute("SELECT DATABASE(), CONNECTION_ID(), USER(), VERSION()")
         result = c.fetchall()
         print("Database: {db}\nConnection ID: {id}\nUser: {u}\nMySQL version: {v}".format(
