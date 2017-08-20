@@ -40,7 +40,7 @@ def print_stud_report():
 
     # GPA
     # Get years and semesters
-    sql = "SELECT DISTINCT year, semester FROM takes WHERE ID={}".format(user_acc.id_)
+    sql = "SELECT DISTINCT year, semester FROM takes WHERE ID={} ORDER BY year, semester DESC".format(user_acc.id_)
     c.execute(sql)
     result1 = c.fetchall()
 
@@ -56,7 +56,9 @@ def print_stud_report():
         result2 = c.fetchall()
         # Use zip (grade, credits)
         grade, credits = zip(*result2)
-        gps = list(gp_to_float(grade))
+        gps = []
+        for i in grade:
+            gps.append(gp_to_float(i))
 
         # Print GPA
         print("\n%s\t%s\tGPA : %d" % (year, semester, sum(gps) / len(gps)))
@@ -74,7 +76,7 @@ def print_stud_report():
         c.execute(sql)
         result3 = c.fetchall()
         for course_id, title, dept_name, credit, grade in result3:
-            print("%10d\t%40s\t%15s\t%8d\t%8s" % (course_id, title, dept_name, credit, grade))
+            print("%10s\t%40s\t%15s\t%8d\t%8s" % (course_id, title, dept_name, credit, grade))
 
     # Close
     c.close()
