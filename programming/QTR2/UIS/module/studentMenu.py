@@ -181,7 +181,7 @@ def print_time_table():
 
 def quit_menu():
     """Sign out."""
-    # global user_acc  # global 변수 write할 때는 명시 필요
+    global user_acc  # global 변수 write할 때는 명시 필요
     # Return connection
     return_connect(user_acc.conn)
     del user_acc
