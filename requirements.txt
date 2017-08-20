@@ -7,7 +7,7 @@ html5lib==0.999999999
 ipykernel==4.6.1
 ipython==6.1.0
 ipython-genutils==0.2.0
-ipywidgets==6.0.0
+ipywidgets==7.0.0
 jedi==0.10.2
 Jinja2==2.9.6
 jsonschema==2.6.0
@@ -47,5 +47,5 @@ tornado==4.5.1
 traitlets==4.3.2
 wcwidth==0.1.7
 webencodings==0.5.1
-widgetsnbextension==2.0.0
+widgetsnbextension==3.0.0
 xlrd==1.0.0
