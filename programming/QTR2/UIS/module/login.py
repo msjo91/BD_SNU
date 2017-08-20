@@ -28,7 +28,7 @@ def auth(id_, name):
                 return user_acc.set_attrs(id_=id_, name=name, role=0, conn=user_connect)
 
         else:
-            print("{id} {name} does not exist. Please try again.".format(id=id_, name=name))
+            print("\n{id} {name} does not exist. Please try again.\n\n".format(id=id_, name=name))
             return login()
 
 
