@@ -59,6 +59,7 @@ def test_connection():
             u=result[0][2],
             v=result[0][3]
         ))
+    return c.close()
 
 
 # Choose functions to import when "from DBconnection import *"
