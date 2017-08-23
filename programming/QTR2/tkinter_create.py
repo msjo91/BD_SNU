@@ -11,8 +11,8 @@ canvas = Canvas(root)
 canvas.grid(column=0, row=0, sticky=(N, W, E, S))
 
 # Line
-canvas.create_line(10, 10, 10, 100)
-canvas.create_line(10, 10, 100, 10)
+canvas.create_line((10, 10, 10, 100))
+canvas.create_line((10, 10, 100, 10))
 
 # Figure
 canvas.create_rectangle(100, 100, 150, 150)
