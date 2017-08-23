@@ -1,4 +1,6 @@
-from DBconnection import get_connect, close_db
+# login.py
+
+from DBconnection import get_connect
 from instructorMenu import instructor_menu
 from studentMenu import student_menu
 from userAcc import user_acc

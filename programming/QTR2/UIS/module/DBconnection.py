@@ -1,3 +1,5 @@
+# DBconnection.py
+
 import os
 import json
 import MySQLdb
@@ -60,7 +62,3 @@ def test_connection():
             v=result[0][3]
         ))
     return c.close()
-
-
-# Choose functions to import when "from DBconnection import *"
-__all__ = ['connect_db', 'get_connect', 'return_connect', 'close_db']

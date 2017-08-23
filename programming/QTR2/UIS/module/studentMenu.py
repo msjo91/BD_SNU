@@ -1,5 +1,6 @@
-from _mysql_exceptions import ProgrammingError
+# studentMenu.py
 
+from _mysql_exceptions import ProgrammingError
 from DBconnection import return_connect
 from userAcc import user_acc
 
