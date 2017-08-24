@@ -18,11 +18,17 @@ filemenu.add_command(label="Save", command=donothing)
 filemenu.add_command(label="Save as...", command=donothing)
 filemenu.add_command(label="Close", command=donothing)
 
+# Draw a separator line.
 filemenu.add_separator()
 
+# Close.
 filemenu.add_command(label="Exit", command=root.quit)
 
+# Pack menu under label "File" (Drop-down style).
 menubar.add_cascade(label="File", menu=filemenu)
 
+# If root.config(menu=menubar) is not declared, system menu does not change.
 root.config(menu=menubar)
+
+# Run
 root.mainloop()
