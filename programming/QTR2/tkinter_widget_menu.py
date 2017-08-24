@@ -25,7 +25,7 @@ filemenu.add_separator()
 # Close.
 filemenu.add_command(label="Exit", command=root.quit)
 
-# Pack menu under label "File" (Drop-down style).
+# Pack menu under label "File" (Pull-down style).
 menubar.add_cascade(label="File", menu=filemenu)
 
 # Create edit menu
