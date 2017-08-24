@@ -1,4 +1,4 @@
-from tkinter import Tk, ttk, StringVar, PhotoImage
+from tkinter import Tk, ttk, StringVar, PhotoImage, END
 from tkinter.messagebox import showinfo
 
 # Parent window and title
@@ -40,10 +40,23 @@ def hello():
 btn = ttk.Button(root, text="Introduction", command=hello)
 btn.pack()
 
+
+# Placeholder event handler
+def clear_entry(event, entry):
+    """Unfortunately, this will remove whatever is inserted."""
+    entry.delete(0, END)
+
+
+# Placeholder text
+placeholder = "Insert name"
+
 # ttk.Entry()
 username = StringVar()
 name = ttk.Entry(root, textvariable=username)
-name.insert(0, "Name")
+name.insert(0, placeholder)
+
+# Bind event handler (Click then remove text)
+name.bind("<Button-1>", lambda event: clear_entry(event, name))
 name.pack(pady=5)
 
 # ttk.Radiobutton()
