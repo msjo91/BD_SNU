@@ -33,10 +33,11 @@ class Stack:
 
 
 class TOH:
-    def setup(self, num_disk=3, num_tower=3, start_tower=1):
+    """Tower of Hanoi"""
+
+    def __init__(self, num_disk, num_tower):
         self.num_disk = num_disk
         self.num_tower = num_tower
-        self.start_tower = start_tower
 
         tower_dict = {}
         for i in range(1, self.num_disk + 1):
@@ -47,4 +48,4 @@ class TOH:
             disk_list.append("Disk {}".format(i))
 
         for i in disk_list:
-            tower_dict["Tower {}".format(self.start_tower)].push(i)
+            tower_dict["Tower 1"].push(i)
