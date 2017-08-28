@@ -97,7 +97,7 @@ class TOH:
 
     def count(self):
         """Total move counts"""
-        print("\nYour total moves: {}".format(self.n))
+        print("Your total moves: {}".format(self.n))
 
 
 def play():
@@ -109,7 +109,7 @@ def play():
         to_t = int(input("\nMove disk to Tower:\n"))
         toh.move(from_t, to_t)
         toh.check()
-        if len(toh.tower2.items) == toh.n or len(toh.tower3.items) == toh.n:
+        if len(toh.tower2.items) == toh.num_disk or len(toh.tower3.items) == toh.num_disk:
             toh.count()
             print("Congratulations!")
             break
