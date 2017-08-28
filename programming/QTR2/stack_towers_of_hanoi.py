@@ -7,6 +7,7 @@ Rules:
  The number of steps should be the least.
 
  A disk with a smaller number in its name is the smaller disk.
+ There are only three towers.
 """
 
 
@@ -33,19 +34,18 @@ class Stack:
 
 
 class TOH:
-    """Tower of Hanoi"""
+    """Towers of Hanoi"""
 
-    def __init__(self, num_disk, num_tower):
+    def __init__(self, num_disk):
+        """Setup"""
         self.num_disk = num_disk
-        self.num_tower = num_tower
-
-        tower_dict = {}
-        for i in range(1, self.num_disk + 1):
-            tower_dict["Tower {}".format(i)] = Stack()
+        self.tower1 = Stack()
+        self.tower2 = Stack()
+        self.tower3 = Stack()
 
         disk_list = []
-        for i in range(1, self.num_tower + 1):
-            disk_list.append("Disk {}".format(i))
+        for i in range(1, self.num_disk + 1):
+            disk_list.append(i)
 
-        for i in disk_list:
-            tower_dict["Tower 1"].push(i)
+        for i in reversed(disk_list):
+            self.tower1.push(i)
