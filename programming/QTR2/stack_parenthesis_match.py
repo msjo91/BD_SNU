@@ -20,10 +20,8 @@ class Stack:
         return self.items[len(self.items) - 1]
 
 
-mystack = Stack()
-
-
 def parenthesis_matching(arg):
+    mystack = Stack()
     for i in range(len(arg)):
         if arg[i] == "(":
             mystack.push(i)
