@@ -4,6 +4,12 @@ class Stack:
     def __init__(self):
         self.items = []
 
+    def __iter__(self):
+        return self.items.__iter__()
+
+    def __str__(self):
+        return self.items.__str__()
+
     def push(self, item):
         self.items.append(item)
 
@@ -18,6 +24,9 @@ class Stack:
 
     def peek(self):
         return self.items[len(self.items) - 1]
+
+    def size(self):
+        return len(self.items)
 
 
 mystack = Stack()
