@@ -1,4 +1,4 @@
-### Project Custom ###
+### Piroject Custom ###
 big_data_snu_env
 .conf/
 .idea/
@@ -6,6 +6,7 @@ big_data_snu_env
 test.*
 fileIO_directory*.txt
 *.gif
+*.sqlite
 
 # Created by https://www.gitignore.io/api/r,git,venv,text,macos,linux,python,pycharm,windows,virtualenv,sublimetext
 
