@@ -2,7 +2,6 @@
 big_data_snu_env
 .conf/
 .idea/
-*.csv
 test.*
 fileIO_directory*.txt
 *.gif
