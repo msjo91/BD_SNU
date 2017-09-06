@@ -11,9 +11,9 @@ class IOFrame(Frame):
         super().__init__()
         self.master = master
         self.inputlabel = Label(self, text=" Input  ")
-        self.inputlabel.grid(row=0, column=0)
+        self.inputlabel.grid(row=0, column=0, pady=10)
         self.inputentry = Text(self, height=3, width=50)
-        self.inputentry.grid(row=0, column=1)
+        self.inputentry.grid(row=0, column=1, pady=10)
         self.runbtn = Button(self, text="Run", command=self.calculate)
         self.runbtn.grid(row=1, column=1)
         self.outputlabel = Label(self, text=" Output ")
