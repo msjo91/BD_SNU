@@ -27,8 +27,9 @@ class IOFrame(Frame):
             new_input = eval(input_val)
             self.outputentry.delete('1.0', END)
             self.outputentry.insert(END, new_input)
-        except (ValueError, TypeError, SyntaxError, ZeroDivisionError) as e:
-            print(e)
+        except (ValueError, TypeError, SyntaxError, ZeroDivisionError, NameError, ImportError) as e:
+            self.outputentry.delete('1.0', END)
+            self.outputentry.insert(END, e)
 
 
 class HelpFrame(Frame):
