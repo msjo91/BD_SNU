@@ -4,7 +4,7 @@ import re
 import pymysql.cursors
 
 # DB settings directory
-BASE_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "QTR1")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 CONF_DIR = os.path.join(BASE_DIR, ".conf")
 CONFIG_FILE = os.path.join(CONF_DIR, "settings.json")
 config = json.loads(open(CONFIG_FILE).read())
