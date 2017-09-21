@@ -7,7 +7,6 @@ fileIO_directory*.txt
 *.gif
 *.sqlite
 *.csv
-*.dot
 
 # Created by https://www.gitignore.io/api/r,git,venv,text,macos,linux,python,pycharm,windows,virtualenv,sublimetext
 
