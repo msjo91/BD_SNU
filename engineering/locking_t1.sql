@@ -3,11 +3,12 @@
 /* Transaction 1 for lock */
 
 /* Implicit lock */
-/* Cause a lock by reading after 50 sec */
+/* Cause a lock by reading after 20 sec */
 SELECT * FROM employee WHERE SLEEP(20);
 
 /* Explicit lock */
 /* Exclusive lock a table */
+LOCK TABLES student READ;
 LOCK TABLES student WRITE;
 /* Update record */
 UPDATE student SET address = 'NYC'  WHERE stu_id = 1292001;
@@ -15,7 +16,7 @@ UPDATE student SET address = 'NYC'  WHERE stu_id = 1292001;
 /* Name lock */
 /* Create a lock with timeout */
 /* 1: success, 0: taken */
-SELECT GET_LOCK('locklock', 10);
+SELECT GET_LOCK('locklock', 100);
 /* Relase name lock */
 /* 1: released, 0: lock is not established in current thread */
 SELECT RELEASE_LOCK('locklock');
