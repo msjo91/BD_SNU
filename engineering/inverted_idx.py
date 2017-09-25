@@ -21,14 +21,12 @@ conn = pymysql.connect(
     autocommit=True,
 )
 
-# Create inverted index table
 with conn.cursor() as c:
+    # Create inverted index table
     sql = """DROP TABLE IF EXISTS wiki_invert CASCADE;
     CREATE TABLE wiki_invert (term VARCHAR(1000), id INT(11));"""
     c.execute(sql)
-
-# Select original table
-with conn.cursor() as c:
+    # Select original table
     sql = "SELECT * FROM wiki"
     c.execute(sql)
     wiki = c.fetchall()
