@@ -2,6 +2,7 @@
 big_data_snu_env
 .conf/
 .idea/
+metastore_db/
 test.*
 fileIO_directory*.txt
 *.gif
