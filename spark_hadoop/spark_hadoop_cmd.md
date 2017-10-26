@@ -34,7 +34,7 @@ Open spark-shell
 ```
 <RDD>.saveAsTextFile("hdfs://localhost:9000/<name>")
 ```
-####Download to local
+#### Download to local
 ```
 $HADOOP_HOME/bin/hdfs dfs -cat /path/in/hadoop /path/in/hadoop/part-00000
 $HADOOP_HOME/bin/hdfs dfs -getmerge /path/in/hadoop <name>.txt
