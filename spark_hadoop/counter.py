@@ -15,8 +15,14 @@ counts = flat.count()
 wordcounts = flat.map(lambda word: (word, 1)).reduceByKey(lambda a, b: a + b)
 # Sort (ascend by key)
 sortcounts = wordcounts.sortBy(lambda x: x[0])
+# Sort (ascend by key)
+keysortcounts = wordcounts.sortByKey(ascending=True)
 # Top 5 count (descend by value)
 topcounts = wordcounts.takeOrdered(5, lambda x: -x[1])
+
+# Filter count
+filtered = flat.filter(lambda word: word == "cracking" or word == "bucket") \
+    .map(lambda word: (word, 1)).reduceByKey(lambda a, b: a + b)
 
 # Bigram count
 bicounts = rdd.map(lambda line: line.split(" ")) \
@@ -27,5 +33,5 @@ bicounts = rdd.map(lambda line: line.split(" ")) \
 bicounts.saveAsTextFile("hdfs://localhost:9000/output3")
 
 # Download output
-# $HADOOP_HOME/bin/hdfs dfs -cat /output3 /part-00000
+# $HADOOP_HOME/bin/hdfs dfs -cat /output3 /output3/part-00000
 # $HADOOP_HOME/bin/hdfs dfs -getmerge /output3 result3.txt
