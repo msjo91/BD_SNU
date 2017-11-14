@@ -8,6 +8,7 @@ fileIO_directory*.txt
 *.gif
 *.sqlite
 *.csv
+*.json
 *.key
 *.pdf
 
