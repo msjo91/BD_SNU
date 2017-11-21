@@ -32,9 +32,8 @@ delayports = spark.sql(query)
 tripVertices = delayports.withColumnRenamed("ID", "No").distinct()  # ID -> No
 tripVertices = tripVertices.withColumnRenamed("IATA", "id").distinct()  # IATA -> id
 
-# A new delays view with selected columns
-tripEdges = delays.select("tripid", delays.delay.cast("int"), "src", "dst", "city_dst",
-                          "state_dst")  # Make sure "delay" values are integers
+# A new delays view with selected columns (Make sure "delay" values are intergers)
+tripEdges = delays.select("tripid", delays.delay.cast("int"), "src", "dst", "city_dst", "state_dst")
 tripEdges = tripEdges.withColumn("label", tripEdges["delay"].cast("int"))
 
 # Create a graphframe
