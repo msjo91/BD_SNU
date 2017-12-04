@@ -19,8 +19,8 @@ benchtest=(0 1)
 # ===============================================================
 parallelism=(4 4)
 driver_mem=(2g 2g)
-worker_mem=(2g 2g)
-worker_inst=(2 2)
+worker_mem=(10g 10g)
+worker_inst=(64 64)
 cores=(1 1)
 
 
