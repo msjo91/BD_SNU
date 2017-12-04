@@ -1,4 +1,4 @@
-### Piroject Custom ###
+### Project Custom ###
 big_data_snu_env
 .conf/
 .idea/
@@ -10,7 +10,6 @@ fileIO_directory*.txt
 *.csv
 *.json
 *.key
-*.pdf
 
 # Created by https://www.gitignore.io/api/r,git,venv,text,macos,linux,python,pycharm,windows,virtualenv,sublimetext
 
